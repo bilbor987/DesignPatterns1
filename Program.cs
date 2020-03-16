@@ -4,7 +4,7 @@ namespace FactoryMethod
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             var factory = new SavingsAcctFactory() as ICreditUnionFactory;
             var citiAcct = factory.GetSavingsAccount("CITI-321");
