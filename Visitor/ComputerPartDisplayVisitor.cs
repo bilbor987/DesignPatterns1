@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Visitor
 {
-    class ComputerPartDisplayVisitor : IComputerPartVisitor
+    public class ComputerPartDisplayVisitor : IComputerPartVisitor
     {
         public void Visit(Computer computer)
         {

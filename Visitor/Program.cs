@@ -18,12 +18,12 @@ namespace Visitor
 
         private static void DoStuff(IComputerPartVisitor visitor)
         {
-            List<IComputerPart> parts = new List<IComputerPart>() { new Computer(), new Computer(), new Computer() };
+            IComputerPart[,] parts = new IComputerPart[,] { { new Computer(), new Keyboard() }, { new Mouse(), new Computer() } };
 
             foreach (var part in parts)
             {
                 part.Accept(visitor);
-                Console.WriteLine("\n");
+                //Console.WriteLine("\n");
             }
         }
     }

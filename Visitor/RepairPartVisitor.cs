@@ -2,7 +2,7 @@
 
 namespace Visitor
 {
-    class RepairPartVisitor : IComputerPartVisitor
+    public class RepairPartVisitor : IComputerPartVisitor
     {
         public void Visit(Computer computer)
         {
