@@ -60,8 +60,10 @@
   <ItemGroup>
     <Compile Include="Computer.cs" />
     <Compile Include="ComputerPartDisplayVisitor.cs" />
+    <Compile Include="ConsoleWrapper.cs" />
     <Compile Include="IComputerPart.cs" />
     <Compile Include="IComputerPartVisitor.cs" />
+    <Compile Include="IConsole.cs" />
     <Compile Include="Keyboard.cs" />
     <Compile Include="Monitor.cs" />
     <Compile Include="Mouse.cs" />

@@ -23,7 +23,6 @@ namespace Visitor
             foreach (var part in parts)
             {
                 part.Accept(visitor);
-                //Console.WriteLine("\n");
             }
         }
     }

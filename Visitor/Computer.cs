@@ -7,27 +7,25 @@ namespace Visitor
     public class Computer : IComputerPart
     {
 
-        private List<IComputerPart> computerParts = new List<IComputerPart>();
+        private IList<IComputerPart> computerPartsreadOnly;
 
         public Computer(List<IComputerPart> cp)
         {
-            computerParts = cp;
+            computerPartsreadOnly = new List<IComputerPart>(cp).AsReadOnly();
         }
 
-        public Computer() { }
-
-        public void AddComputerPart(IComputerPart cp)
+        public Computer()
         {
-            computerParts.Add(cp);
+            computerPartsreadOnly = new List<IComputerPart>().AsReadOnly();
         }
         public void Accept(IComputerPartVisitor computerPartVisitor)
         {
-            foreach (var part in computerParts)
+            foreach (var part in computerPartsreadOnly)
             {
                 part.Accept(computerPartVisitor);
             }
             computerPartVisitor.Visit(this);
-        }
+        } 
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -38,8 +36,8 @@ namespace Visitor
             {
                 return false;
             }
-            var inFirstNotInSecond = this.computerParts.Except(((Computer)obj).computerParts);
-            var inSecondNotInFirst = ((Computer)obj).computerParts.Except(this.computerParts);
+            var inFirstNotInSecond = this.computerPartsreadOnly.Except(((Computer)obj).computerPartsreadOnly);
+            var inSecondNotInFirst = ((Computer)obj).computerPartsreadOnly.Except(this.computerPartsreadOnly);
 
             if (inFirstNotInSecond.Count() == 0 &&
                 inSecondNotInFirst.Count() == 0)
@@ -48,5 +46,24 @@ namespace Visitor
             return false;
         }
 
+        public override int GetHashCode()
+        {
+            int hash = 19;
+            foreach(var part in computerPartsreadOnly)
+            {
+                hash = hash * 31 + part.GetHashCode();
+            }
+            return hash;
+        }
+
+        public static bool operator ==(Computer left, Computer right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Computer left, Computer right)
+        {
+            return !(left == right);
+        }
     }
 }

@@ -69,7 +69,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="ComputerPartDisplayVisitorTests.cs" />
     <Compile Include="ComputerTests.cs" />
+    <Compile Include="KeyboardTests.cs" />
+    <Compile Include="MonitorTests.cs" />
+    <Compile Include="MouseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
