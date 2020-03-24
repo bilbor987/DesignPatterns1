@@ -4,24 +4,30 @@ namespace Visitor
 {
     public class RepairPartVisitor : IComputerPartVisitor
     {
+        private IDisplay display;
+        public RepairPartVisitor(IDisplay display)
+        {
+            this.display = display;
+        }
+
         public void Visit(Computer computer)
         {
-            Console.WriteLine("Repair Computer:");
+            display.WriteLine("Repair Computer");
         }
 
         public void Visit(Mouse mouse)
         {
-            Console.WriteLine("Repair mouse:");
+            display.WriteLine("Repair mouse");
         }
 
         public void Visit(Keyboard keyboard)
         {
-            Console.WriteLine("Repair keyboard:");
+            display.WriteLine("Repair keyboard");
         }
 
         public void Visit(Monitor monitor)
         {
-            Console.WriteLine("Repair monitor:");
+            display.WriteLine("Repair monitor");
         }
     }
 }

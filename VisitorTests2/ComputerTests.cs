@@ -17,10 +17,10 @@ namespace Visitor.Tests
         public void AcceptTestVisitor_VisitCalledOnceForComputerNeverForComputerParts()
         {
             Mock<IComputerPartVisitor> mockComputerPartVisitor = new Mock<IComputerPartVisitor>();
-            
             Computer computer = new Computer();
-            computer.Accept(mockComputerPartVisitor.Object);
 
+            computer.Accept(mockComputerPartVisitor.Object);
+            
             mockComputerPartVisitor.Verify(visitor => visitor.Visit(computer), Times.Once());
             mockComputerPartVisitor.VerifyNoOtherCalls();
         }
@@ -53,8 +53,7 @@ namespace Visitor.Tests
             mockComputerPart1.Verify(x => x.Accept(mockComputerPartVisitor.Object), Times.Once());
             mockComputerPart2.Verify(x => x.Accept(mockComputerPartVisitor.Object), Times.Once());
         }
-        //TODO implement UT for concrete visitors/any class
-        //TODO use Tools/Test line coverage in VS (run with coverage)
+
         [TestMethod()]
         public void SameInstanceComputer_Equals_True()
         {
@@ -91,7 +90,6 @@ namespace Visitor.Tests
         [TestMethod()]
         public void TwoComputersSameValues_GetHashCode_True()
         {
-            Mouse mouse = new Mouse();
             Mock<IComputerPart> mockComputerPart = new Mock<IComputerPart>();
             Computer computer1 = new Computer(new List<IComputerPart>() { mockComputerPart.Object });
             Computer computer2 = new Computer(new List<IComputerPart>() { mockComputerPart.Object });

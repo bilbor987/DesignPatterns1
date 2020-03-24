@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Visitor
 {
-    public interface IConsole
+    public interface IDisplay
     {
-        void Write(string message);
         void WriteLine(string message);
-        string ReadLine();
     }
 }

@@ -7,7 +7,7 @@ namespace Visitor
     public class Computer : IComputerPart
     {
 
-        private IList<IComputerPart> computerPartsreadOnly;
+        private readonly IList<IComputerPart> computerPartsreadOnly;
 
         public Computer(List<IComputerPart> cp)
         {
@@ -19,7 +19,7 @@ namespace Visitor
             computerPartsreadOnly = new List<IComputerPart>().AsReadOnly();
         }
         public void Accept(IComputerPartVisitor computerPartVisitor)
-        {
+        { 
             foreach (var part in computerPartsreadOnly)
             {
                 part.Accept(computerPartVisitor);

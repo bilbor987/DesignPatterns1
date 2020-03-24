@@ -8,24 +8,30 @@ namespace Visitor
 {
     public class ComputerPartDisplayVisitor : IComputerPartVisitor
     {
+        private IDisplay display;
+        public ComputerPartDisplayVisitor(IDisplay display) 
+        {
+            this.display = display;
+        }
+
         public void Visit(Computer computer)
         {
-            Console.WriteLine("Displaying computer:");
+            display.WriteLine("Displaying computer");
         }
 
         public void Visit(Mouse mouse)
         {
-            Console.WriteLine("Displaying mouse:");
+            display.WriteLine("Displaying mouse");
         }
 
         public void Visit(Keyboard keyboard)
         {
-            Console.WriteLine("Displaying keyboard:");
+            display.WriteLine("Displaying keyboard");
         }
 
         public void Visit(Monitor monitor)
         {
-            Console.WriteLine("Displaying monitor:");
+            display.WriteLine("Displaying monitor");
         }
     }
 }
