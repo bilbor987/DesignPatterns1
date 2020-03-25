@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FileUtils;
 
 namespace Visitor
 {
@@ -18,6 +20,10 @@ namespace Visitor
             IComputerPartVisitor repairVisitor = new RepairPartVisitor(fileWriter);
             DoStuff(displayVisitor);
             DoStuff(repairVisitor);
+
+            
+
+     
         }
 
         private static void DoStuff(IComputerPartVisitor visitor)

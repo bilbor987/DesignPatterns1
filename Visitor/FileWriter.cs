@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-/**
- * bool filesAreEqual = new FileInfo(path1).Length == new FileInfo(path2).Length && 
-       File.ReadAllBytes(path1).SequenceEqual(File.ReadAllBytes(path2));
- *
- */
-
 
 namespace Visitor
 {
@@ -17,7 +11,13 @@ namespace Visitor
     {
         public void WriteLine(string message)
         {
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\pocol\source\DesignPatterns\DesignPatterns\WriteText.txt", true))
+            string fileName = "\\WriteText.txt";
+            string currentDir = Environment.CurrentDirectory;
+            string myPath = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(currentDir))) + fileName;
+
+            Console.WriteLine(myPath);
+
+            using (StreamWriter file = new StreamWriter(myPath, true))
             {
                 file.WriteLine(message);
             }
