@@ -15,8 +15,6 @@ namespace Visitor
             string currentDir = Environment.CurrentDirectory;
             string myPath = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(currentDir))) + fileName;
 
-            Console.WriteLine(myPath);
-
             using (StreamWriter file = new StreamWriter(myPath, true))
             {
                 file.WriteLine(message);

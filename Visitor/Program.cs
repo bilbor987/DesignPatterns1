@@ -14,21 +14,16 @@ namespace Visitor
     {
         static void Main(string[] args)
         {
-            IDisplay display = new Displayer();
-            IDisplay fileWriter = new FileWriter();
-            IComputerPartVisitor displayVisitor = new ComputerPartDisplayVisitor(display);
-            IComputerPartVisitor repairVisitor = new RepairPartVisitor(fileWriter);
+            IComputerPartVisitorFactory computerPartVisitorFactory = new VisitorFactory();
+            IComputerPartVisitor displayVisitor = computerPartVisitorFactory.GetVisitor("display", "display");
+            IComputerPartVisitor repairVisitor = computerPartVisitorFactory.GetVisitor("repair", "file");
+
             DoStuff(displayVisitor);
             DoStuff(repairVisitor);
-
-            
-
-     
         }
 
         private static void DoStuff(IComputerPartVisitor visitor)
         {
-            //pe computer nu mai afiseaza pe ecran! as expected, totu e in regula
             IComputerPart[,] parts = new IComputerPart[,] { { new Computer(), new Keyboard() }, { new Mouse(), new Computer() } };
 
             foreach (var part in parts)

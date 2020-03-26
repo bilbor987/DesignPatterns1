@@ -65,16 +65,20 @@
     <Compile Include="Computer.cs" />
     <Compile Include="ComputerPartDisplayVisitor.cs" />
     <Compile Include="Displayer.cs" />
+    <Compile Include="DisplayFactory.cs" />
     <Compile Include="FileWriter.cs" />
     <Compile Include="IComputerPart.cs" />
     <Compile Include="IComputerPartVisitor.cs" />
+    <Compile Include="IComputerPartVisitorFactory.cs" />
     <Compile Include="IDisplay.cs" />
+    <Compile Include="IDisplayFactory.cs" />
     <Compile Include="Keyboard.cs" />
     <Compile Include="Monitor.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepairPartVisitor.cs" />
+    <Compile Include="VisitorFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

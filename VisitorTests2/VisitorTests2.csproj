@@ -76,12 +76,14 @@
     <Compile Include="ComputerPartDisplayVisitorTests.cs" />
     <Compile Include="ComputerTests.cs" />
     <Compile Include="DisplayerTests.cs" />
+    <Compile Include="DisplayFactoryTests.cs" />
     <Compile Include="FileWriterTests.cs" />
     <Compile Include="KeyboardTests.cs" />
     <Compile Include="MonitorTests.cs" />
     <Compile Include="MouseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepairPartVisitorTests.cs" />
+    <Compile Include="VisitorFactoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
