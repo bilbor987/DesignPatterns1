@@ -11,7 +11,7 @@ namespace Visitor
     {
         public void WriteLine(string message)
         {
-            string fileName = "\\WriteText.txt";
+            string fileName = "\\VisitorTests2\\TestFiles\\WriteText.txt";
             string currentDir = Environment.CurrentDirectory;
             string myPath = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(currentDir))) + fileName;
 

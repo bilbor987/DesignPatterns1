@@ -18,8 +18,8 @@ namespace Visitor.Tests
         {
             FileWriter fileWriter = new FileWriter();
             string message = "expected message";
-            string expectedFileName = "\\expected.txt";
-            string actualFileName = "\\WriteText.txt";
+            string expectedFileName = "\\VisitorTests2\\TestFiles\\expected.txt";
+            string actualFileName = "\\VisitorTests2\\TestFiles\\WriteText.txt";
             string currentDir = Environment.CurrentDirectory;
 
             string pathOfExpectedFile = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(currentDir))) + expectedFileName;
